@@ -16,4 +16,4 @@ while(True):
     print(f'Client Message: {message}\nClient IP: {address}')
     
     # Manda para o cliente a mensagem recebida
-    udp.sendto(str.encode(message), address)
+    udp.sendto(message, address)
