@@ -2,7 +2,7 @@ import socket
 from socketserver import UDPServer
 
 ip = "192.168.1.13"
-port = "2022"
+port = 2022
 
 bufferSize = 1024
 
