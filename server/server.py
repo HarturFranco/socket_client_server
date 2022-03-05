@@ -1,19 +1,30 @@
 import socket
-from socketserver import UDPServer
 
-ip = "192.168.1.13"
-port = 2022
-
-bufferSize = 1024
-
-udp = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-orign = (ip, port)
-udp.bind(orign)
-
-while(True):
-    message, address = udp.recvfrom(bufferSize)
+class Server:
+    def __init__(self):
+        self._ip = "192.168.1.13" # Definindo o ip do servidor
+        self._port = 2022 # Definindo a porta a ser utilizada pelo servidor
+        self._bufferSize = 1024 # Definindo o tamanho do buffer
+        self._address = (self.ip, self.port) # Definindo endereço do server -> tupla (ip, porta)
     
-    print(f'Client Message: {message}\nClient IP: {address}')
-    
-    # Manda para o cliente a mensagem recebida
-    udp.sendto(message, address)
+    def listen(self):
+        # criando socket 
+        udpSSocket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        # vinculando ao endereco
+        udpSSocket.bind(self._address)
+        
+        # "escutando" por mensagens
+        while(True):
+            message, address = udpSSocket.recvfrom(self._bufferSize)
+            
+            # Exibe a mensagem recebida
+            print(f'Client Message: {message}\nClient IP: {address}')
+            
+            # Manda para o cliente a mensagem recebida
+            udpSSocket.sendto(message, address)
+        
+        
+
+if __name__  == "__name__":
+    udp_server = Server()
+    udp_server.listen()
