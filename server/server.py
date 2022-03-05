@@ -5,7 +5,7 @@ class Server:
         self._ip = "192.168.1.13" # Definindo o ip do servidor
         self._port = 2022 # Definindo a porta a ser utilizada pelo servidor
         self._bufferSize = 1024 # Definindo o tamanho do buffer
-        self._address = (self.ip, self.port) # Definindo endereço do server -> tupla (ip, porta)
+        self._address = (self._ip, self._ip) # Definindo endereço do server -> tupla (ip, porta)
     
     def listen(self):
         # criando socket 
