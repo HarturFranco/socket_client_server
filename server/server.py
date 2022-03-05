@@ -15,13 +15,13 @@ class Server:
         
         # "escutando" por mensagens
         while(True):
-            message, address = udpSSocket.recvfrom(self._bufferSize)
+            usr_message, usr_address = udpSSocket.recvfrom(self._bufferSize)
             
             # Exibe a mensagem recebida
-            print(f'Client Message: {message}\nClient IP: {address}')
+            print(f'Client Message: {usr_message}\nClient IP: {usr_address}')
             
             # Manda para o cliente a mensagem recebida
-            udpSSocket.sendto(message, address)
+            udpSSocket.sendto(usr_message, usr_address)
         
         
 
