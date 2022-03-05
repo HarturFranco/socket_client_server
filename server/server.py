@@ -5,12 +5,13 @@ class Server:
         self._ip = "192.168.1.13" # Definindo o ip do servidor
         self._port = 2022 # Definindo a porta a ser utilizada pelo servidor
         self._bufferSize = 1024 # Definindo o tamanho do buffer
-        self._address = (self._ip, self._ip) # Definindo endereço do server -> tupla (ip, porta)
+        self._address = (self._ip, self._port) # Definindo endereço do server -> tupla (ip, porta)
     
     def listen(self):
         # criando socket 
         udpSSocket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         # vinculando ao endereco
+        print(self._address[0], self._address[1])
         udpSSocket.bind(self._address)
         
         # "escutando" por mensagens
