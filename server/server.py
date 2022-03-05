@@ -25,6 +25,6 @@ class Server:
         
         
 
-if __name__  == "__name__":
+if __name__  == "__main__":
     udp_server = Server()
     udp_server.listen()
