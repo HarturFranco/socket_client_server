@@ -11,7 +11,6 @@ class Server:
         # criando socket 
         udpSSocket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         # vinculando ao endereco
-        print(self._address[0], self._address[1])
         udpSSocket.bind(self._address)
         
         # "escutando" por mensagens
