@@ -28,7 +28,7 @@ class Client:
                 time.sleep(1) ## Delay entre as mensagens
             ## Calculo das estatisticas
             print("Estatistica:")
-            print("Pacotes totais: " + str(qtd_msg)
+            print("Pacotes totais: " + str(qtd_msg))
             print("Pacotes recebidos: " + str(len(list_time)) + " - " + str((len(list_time) / qtd_msg) * 100) + "%")
             print("Pacotes perdidos: " + str(qtd_error) + " - " + str((qtd_error / qtd_msg) * 100) + "%")
             print("Tempo máximo: " + str(max(list_time)) + " ms")
